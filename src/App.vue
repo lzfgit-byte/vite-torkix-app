@@ -1,16 +1,10 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3.0 + Vite" />
+    <HelloWorld msg="a"></HelloWorld>
+    <Navigation></Navigation>
 </template>
 
-<script lang="ts">
-    import { defineComponent } from 'vue';
+<script setup lang="ts">
+    import Navigation from './components/navigation/navigation.vue';
     import HelloWorld from './components/HelloWorld.vue';
-
-    export default defineComponent({
-        name: 'App',
-        components: {
-            HelloWorld,
-        },
-    });
 </script>

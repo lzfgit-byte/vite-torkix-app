@@ -13,6 +13,7 @@ module.exports = {
         'plugin:vue/vue3-recommended',
         'plugin:prettier/recommended',
         'plugin:vue/essential',
+        'plugin:@typescript-eslint/recommended',
     ],
     plugins: ['@typescript-eslint'],
     rules: {
