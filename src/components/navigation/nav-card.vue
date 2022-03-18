@@ -1,14 +1,16 @@
 <template>
     <a class="contain" :href="href" target="_blank">
         <div class="dotContain">
-            <img width="24px" height="24px" src="public/imgs/icon_more_vert.svg" />
+            <img width="24" height="24" src="public/imgs/icon_more_vert.svg" />
         </div>
         <div class="imgContain">
             <div class="img">
-                <img width="24" height="24" src="public/imgs/yt.png" />
+                <img width="24" height="24" :src="icon" />
             </div>
         </div>
-        <div class="name"> <span>YouTube</span></div>
+        <div class="name">
+            <span>{{ name }}</span>
+        </div>
     </a>
 </template>
 
@@ -21,9 +23,9 @@
             href: string;
         }>(),
         {
-            name: '名字',
-            icon: '',
-            href: '',
+            name: 'YouTube',
+            icon: 'public/imgs/yt.png',
+            href: 'https://www.youtube.com/',
         }
     );
     const emit = defineEmits(['click']);

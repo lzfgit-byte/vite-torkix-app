@@ -1,5 +1,5 @@
 <template>
-    <nav-card></nav-card>
+    <div style="display: grid"> </div>
 </template>
 
 <script setup lang="ts">
