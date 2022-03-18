@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref, defineProps, defineEmits } from 'vue';
+    import { ref } from 'vue';
     import { Button as AButton } from 'ant-design-vue';
     defineProps({
         msg: {

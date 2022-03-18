@@ -1,3 +1,3 @@
-interface Data{
-    name:string
+interface Data {
+    name: string;
 }

@@ -6,7 +6,13 @@ module.exports = {
     },
     parser: 'vue-eslint-parser',
     parserOptions: {
+        ecmaVersion: 2020,
         parser: '@typescript-eslint/parser',
+        sourceType: 'module',
+    },
+    globals: {
+        defineEmits: 'readonly',
+        defineProps: 'readonly',
     },
     extends: [
         'eslint:recommended',
