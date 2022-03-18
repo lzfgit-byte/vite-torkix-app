@@ -1,6 +1,4 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="a"></HelloWorld>
     <Navigation></Navigation>
 </template>
 

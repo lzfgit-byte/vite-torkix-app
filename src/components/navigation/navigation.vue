@@ -1,5 +1,10 @@
 <template>
-    <div style="display: grid"> </div>
+    <div class="topLeft">topLeft</div>
+    <div class="grid-contain">
+        <div class="iconNav">iconNav</div>
+        <div class="inptNav">inptNav</div>
+        <div class="barNav">barNav</div>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -23,4 +28,6 @@
     const msg2 = ref<string>(''); //  可以通过范型约束类型
 </script>
 
-<style scoped></style>
+<style scoped lang="less">
+    @import './css/navigation-less';
+</style>
