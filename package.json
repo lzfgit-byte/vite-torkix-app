@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vuedx-typecheck . && vite build"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@babel/eslint-parser": "^7.17.0",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
+    "@vitejs/plugin-vue": "^2.2.4",
     "@vue/compiler-sfc": "^3.2.31",
     "@vuedx/typecheck": "^0.3.1-insiders-1606311019.0",
     "@vuedx/typescript-plugin-vue": "^0.3.1-insiders-1606311019.0",
@@ -32,7 +33,7 @@
     "less-loader": "^10.2.0",
     "prettier": "2.6.0",
     "typescript": "^4.1.2",
-    "vite": "^1.0.0-rc.13",
+    "vite": "^2.8.6",
     "vue-eslint-parser": "^8.3.0",
     "vue-template-compiler": "^2.6.14"
   }

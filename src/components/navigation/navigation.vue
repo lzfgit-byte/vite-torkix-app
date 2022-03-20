@@ -31,15 +31,18 @@
                 </div>
             </div>
         </div>
-        <div class="barNav">barNav</div>
+        <div class="barNav"> </div>
     </div>
 </template>
 
 <script setup lang="ts">
     import { ref, reactive, PropType } from 'vue';
     import { webSiteProp, searchWebSit } from './type/navigation-types';
+    import getWebData from '@data/webs';
     import NavCard from './nav-card.vue';
-    import Index from '../../../index.html';
+    const { webInfos } = getWebData();
+    debugger;
+    console.log(webInfos);
     defineProps({
         website: {
             type: Array as PropType<webSiteProp[]>,
