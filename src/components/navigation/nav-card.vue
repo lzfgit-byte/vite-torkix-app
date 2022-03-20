@@ -1,5 +1,5 @@
 <template>
-    <div class="contain" :href="href" target="_blank">
+    <div class="contain" :href="href" target="_blank" @click="target">
         <div class="dotContain">
             <img width="24" height="24" src="public/imgs/icon_more_vert.svg" />
         </div>
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
     import { withDefaults } from 'vue';
-    withDefaults(
+    const props = withDefaults(
         defineProps<{
             name?: string;
             icon?: string;
@@ -29,6 +29,14 @@
         }
     );
     const emit = defineEmits(['click']);
+    const target = () => {
+        if (props.href) {
+            window.open(props.href, '_blank');
+            emit('click', 'success');
+        } else {
+            emit('click', 'err');
+        }
+    };
 </script>
 
 <style scoped lang="less">
