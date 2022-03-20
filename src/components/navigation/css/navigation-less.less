@@ -1,6 +1,6 @@
 .grid-contain{
   display: grid;
-  grid-template-rows: 20fr 4fr 36fr;
+  grid-template-rows: 20fr 4fr 40fr;
   height: 100vh;
 }
 .topLeft {
@@ -9,17 +9,53 @@
   width: 200px;
   right: 10px;
 }
-.iconNav {
-  background: #8CC7B5;
+.logo {
+  height: 92px;
+  width: 272px;
+  margin: auto;
+  padding-top: 7.2vh;
 }
-.inptNav {
-  background: #D1BA74;
+.logoContain{
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
 }
+
+.searchInputContain{
+  display: flex;
+  height: 100%;
+
+}
+.search{
+  margin: auto;
+  width: 561px;
+  height: 44px;
+}
+.searchIconContain{
+  position: absolute;
+  z-index: 666;
+  top: 33%;
+  left: 19.5%;
+}
+#input{
+  background-color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  color: black;
+  font-family: inherit;
+  font-size: 16px;
+  height: 100%;
+  outline: none;
+  padding-inline-end: 44px;
+  padding-inline-start: 52px;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 0 1.2px;
+}
+
 .barNav {
   background: #BEE7E9;
 }
 .grid-contain > div {
   text-align: center;
-  font-size: 200%;
-  color: #fff;
 }
