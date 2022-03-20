@@ -29,5 +29,6 @@ module.exports = {
         'no-debugger': 'off',
         'no-unused-vars': 1,
         'vue/no-multiple-template-root': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
     },
 };

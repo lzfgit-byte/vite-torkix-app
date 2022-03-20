@@ -1,5 +1,5 @@
 <template>
-    <a class="contain" :href="href" target="_blank">
+    <div class="contain" :href="href" target="_blank">
         <div class="dotContain">
             <img width="24" height="24" src="public/imgs/icon_more_vert.svg" />
         </div>
@@ -11,7 +11,7 @@
         <div class="name">
             <span>{{ name }}</span>
         </div>
-    </a>
+    </div>
 </template>
 
 <script setup lang="ts">

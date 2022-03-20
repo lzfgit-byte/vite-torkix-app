@@ -31,18 +31,37 @@
                 </div>
             </div>
         </div>
-        <div class="barNav"> </div>
+        <div class="barNav">
+            <div class="barContainer">
+                <div class="barContain">
+                    <div class="displayInline">
+                        <div
+                            v-for="(rowItem, index) in wrapperWebInfos"
+                            :key="index"
+                            class="rowNav"
+                        >
+                            <NavCard
+                                v-for="item in rowItem"
+                                :key="item.href"
+                                :name="item.name"
+                                :href="item.href"
+                                :icon="item.icon"
+                            ></NavCard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
     import { ref, reactive, PropType } from 'vue';
     import { webSiteProp, searchWebSit } from './type/navigation-types';
-    import getWebData from '@data/webs';
+    // import getWebData from '@data/webs';
+    import getWebData from '../../data/webs';
     import NavCard from './nav-card.vue';
     const { webInfos } = getWebData();
-    debugger;
-    console.log(webInfos);
     defineProps({
         website: {
             type: Array as PropType<webSiteProp[]>,
@@ -57,7 +76,16 @@
             },
         },
     });
-    const msg2 = ref<string>(''); //  可以通过范型约束类型
+    let wrapperWebInfos = reactive([[], []]);
+    webInfos
+        .filter((item) => typeof item.show === 'undefined' && !item.show)
+        .forEach((item, index) => {
+            if (index < 5) {
+                wrapperWebInfos[0].push(item);
+            } else if (index < 10) {
+                wrapperWebInfos[1].push(item);
+            }
+        });
 </script>
 
 <style scoped lang="less">

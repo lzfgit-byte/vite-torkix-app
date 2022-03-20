@@ -9,3 +9,9 @@ export interface webSiteProp {
 export interface searchWebSit {
     href?: string;
 }
+
+export interface navProps {
+    name?: string;
+    icon?: string;
+    href: string;
+}
