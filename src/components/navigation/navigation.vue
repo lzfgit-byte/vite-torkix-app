@@ -2,13 +2,14 @@
     <div class="topLeft">
         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl" target="_self">Gmail</a>
         <a href="https://www.google.com.hk/imghp?hl=zh-CN&tab=ri&ogbl" target="_self">图片</a>
-        <div class="appDot">
+        <div class="appDot" @click="showSeting">
             <svg width="24" height="24" viewBox="0 0 24 24">
                 <path
                     d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
                 ></path>
             </svg>
         </div>
+        <div class="modalSet" :style="inlineStyle"></div>
         <div class="photoContain displayInline">
             <img width="45" src="public/imgs/tx.png" />
         </div>
@@ -69,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, reactive, PropType, withDefaults } from 'vue';
+    import { ref, reactive, PropType, withDefaults, onMounted } from 'vue';
     import { webSiteProp, searchWebSit } from './type/navigation-types';
     import { webInfoType } from '../../data/webs';
     // import getWebData from '@data/webs';
@@ -104,6 +105,10 @@
                 wrapperWebInfos[1].push(item as webInfoType);
             }
         });
+    let inlineStyle = ref('');
+    const showSeting = () => {
+        inlineStyle.value = inlineStyle.value === '' ? 'opacity: 1;' : '';
+    };
 </script>
 
 <style scoped lang="less">
