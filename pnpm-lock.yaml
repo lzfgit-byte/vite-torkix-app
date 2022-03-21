@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/eslint-parser': ^7.17.0
+  '@types/lodash': ^4.14.180
   '@typescript-eslint/eslint-plugin': ^5.15.0
   '@typescript-eslint/parser': ^5.15.0
   '@vitejs/plugin-vue': ^2.2.4
@@ -20,6 +21,7 @@ specifiers:
   jquery: ^3.6.0
   less: ^4.1.2
   less-loader: ^10.2.0
+  lodash: ^4.17.21
   pako: ^2.0.4
   pdfjs-dist: ^2.0.943
   prettier: 2.6.0
@@ -35,12 +37,14 @@ dependencies:
   core-js: registry.npmmirror.com/core-js/3.21.1
   file-saver: registry.npmmirror.com/file-saver/2.0.5
   jquery: registry.npmmirror.com/jquery/3.6.0
+  lodash: registry.npmmirror.com/lodash/4.17.21
   pako: registry.npmmirror.com/pako/2.0.4
   pdfjs-dist: registry.npmmirror.com/pdfjs-dist/2.13.216
   vue: registry.npmmirror.com/vue/3.2.31
 
 devDependencies:
   '@babel/eslint-parser': registry.npmmirror.com/@babel/eslint-parser/7.17.0_eslint@8.11.0
+  '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.180
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.15.0_f2c49ce7d0e93ebcfdb4b7d25b131b28
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.15.0_eslint@8.11.0+typescript@4.6.2
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.2.4_vite@2.8.6+vue@3.2.31
@@ -423,6 +427,12 @@ packages:
     resolution: {integrity: sha512-BLO9bBq59vW3fxCpD4o0N4U+DXsvwvIcl+jofw0frQo/GrBFC+/jRZj1E7kgp6dvTyNmA4y6JCV5Id/r3mNP5A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/json-schema/-/json-schema-7.0.10.tgz}
     name: '@types/json-schema'
     version: 7.0.10
+    dev: true
+
+  registry.npmmirror.com/@types/lodash/4.14.180:
+    resolution: {integrity: sha512-XOKXa1KIxtNXgASAnwj7cnttJxS4fksBRywK/9LzRV5YxrF80BXZIGeQSuoESQ/VkUj30Ae0+YcuHc15wJCB2g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.180.tgz}
+    name: '@types/lodash'
+    version: 4.14.180
     dev: true
 
   registry.npmmirror.com/@types/micromatch/4.0.2:

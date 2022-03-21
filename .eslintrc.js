@@ -13,6 +13,7 @@ module.exports = {
     globals: {
         defineEmits: 'readonly',
         defineProps: 'readonly',
+        defineExpose: 'readonly',
     },
     extends: [
         'eslint:recommended',
@@ -30,5 +31,7 @@ module.exports = {
         'no-unused-vars': 1,
         'vue/no-multiple-template-root': 'off',
         '@typescript-eslint/no-var-requires': 'off',
+        'vue/require-default-prop': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
     },
 };

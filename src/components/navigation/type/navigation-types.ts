@@ -15,3 +15,4 @@ export interface navProps {
     icon?: string;
     href: string;
 }
+export type strOrReStr = string | (() => string);

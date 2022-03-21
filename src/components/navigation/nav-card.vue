@@ -16,11 +16,12 @@
 
 <script setup lang="ts">
     import { withDefaults } from 'vue';
+    import { strOrReStr } from './type/navigation-types';
     const props = withDefaults(
         defineProps<{
-            name?: string;
-            icon?: string;
-            href: string;
+            name?: strOrReStr;
+            icon?: strOrReStr;
+            href: strOrReStr;
         }>(),
         {
             name: 'YouTube',

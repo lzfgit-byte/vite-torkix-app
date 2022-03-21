@@ -69,35 +69,39 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, reactive, PropType } from 'vue';
+    import { ref, reactive, PropType, withDefaults } from 'vue';
     import { webSiteProp, searchWebSit } from './type/navigation-types';
+    import { webInfoType } from '../../data/webs';
     // import getWebData from '@data/webs';
     import getWebData from '../../data/webs';
     import NavCard from './nav-card.vue';
+    import _ from 'lodash';
     const { webInfos } = getWebData();
-    defineProps({
-        website: {
-            type: Array as PropType<webSiteProp[]>,
-            required: true,
-        },
-        searchUrl: {
-            type: Array as PropType<searchWebSit[]>,
-            default: () => {
-                {
-                    [];
-                }
-            },
+    const props = withDefaults(
+        defineProps<{
+            website?: webSiteProp[];
+            searchUrl?: searchWebSit[];
+            rowNumber?: number;
+        }>(),
+        {
+            website: null,
+            searchUrl: null,
+            rowNumber: 5,
+        }
+    );
+    defineExpose({
+        ss: () => {
+            _.shuffle();
         },
     });
-    withDefaults();
-    let wrapperWebInfos = reactive([[], []]);
+    let wrapperWebInfos: any[] = reactive([[], []]);
     webInfos
         .filter((item) => typeof item.show === 'undefined' && !item.show)
         .forEach((item, index) => {
-            if (index < 5) {
-                wrapperWebInfos[0].push(item);
-            } else if (index < 10) {
-                wrapperWebInfos[1].push(item);
+            if (index < props.rowNumber) {
+                wrapperWebInfos[0].push(item as webInfoType);
+            } else if (index < props.rowNumber * 2) {
+                wrapperWebInfos[1].push(item as webInfoType);
             }
         });
 </script>

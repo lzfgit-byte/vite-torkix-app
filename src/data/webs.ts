@@ -1,4 +1,4 @@
-interface webInfoType {
+export interface webInfoType {
     href: string;
     name: string;
     show?: boolean;
