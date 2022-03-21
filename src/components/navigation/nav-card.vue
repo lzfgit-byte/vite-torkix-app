@@ -25,7 +25,7 @@
         {
             name: 'YouTube',
             icon: () => {
-                const ranNum = parseInt(Math.random() * 10);
+                const ranNum = parseInt((Math.random() * 10).toString());
                 return `public/default/default${ranNum}.png`;
             },
             href: 'https://www.youtube.com/',

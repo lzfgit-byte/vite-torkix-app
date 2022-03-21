@@ -89,6 +89,7 @@
             },
         },
     });
+    withDefaults();
     let wrapperWebInfos = reactive([[], []]);
     webInfos
         .filter((item) => typeof item.show === 'undefined' && !item.show)
