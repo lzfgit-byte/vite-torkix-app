@@ -1,0 +1,32 @@
+.boxSize(){
+  box-sizing: border-box;
+}
+.contain{
+  .boxSize();
+  width: 84px;
+  height: 84px;
+  position: relative;
+  border-radius: 8px;
+  align-items: center;
+
+}
+.imgContain{
+  .boxSize();
+  width: 64px;
+  height: 64px;
+  display: block;
+
+}
+.contain:hover{
+  background-color: #e8f0fe;
+  border: none;
+  border-radius: 8px;
+  margin: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.imgContain img{
+  .boxSize();
+  display: block;
+
+}

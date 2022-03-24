@@ -9,7 +9,9 @@
                 ></path>
             </svg>
         </div>
-        <div class="modalSet" :style="inlineStyle"></div>
+        <div class="modalSet" :style="inlineStyle">
+            <aop-dot-card></aop-dot-card>
+        </div>
         <div class="photoContain displayInline">
             <img width="45" src="public/imgs/tx.png" />
         </div>
@@ -75,8 +77,10 @@
     import { webInfoType } from '../../data/webs';
     // import getWebData from '@data/webs';
     import getWebData from '../../data/webs';
+    import aopDotCard from './aop-dot-card.vue';
     import NavCard from './nav-card.vue';
     import _ from 'lodash';
+    import AopDotCard from "./aop-dot-card.vue";
     const { webInfos } = getWebData();
     const props = withDefaults(
         defineProps<{
