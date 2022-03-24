@@ -33,5 +33,6 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
         'vue/require-default-prop': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        'vue/no-v-model-argument': 'off',
     },
 };

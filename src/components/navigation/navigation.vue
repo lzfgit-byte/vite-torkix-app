@@ -77,6 +77,10 @@
             </div>
         </div>
     </div>
+    <div v-show="visible" class="containFrame">
+        <div class="closeBtn" @click="handleOk">X</div>
+        <iframe src="https://wannianrili.bmcx.com/" width="98%" height="90%"> </iframe>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -133,6 +137,10 @@
             }
         }
     };
+    const visible = ref(false);
+    const handleOk = () => {
+        visible.value = false;
+    };
     const handlerClick = (type: string) => {
         switch (type) {
             case 'toggleMovie':
@@ -140,6 +148,10 @@
                 break;
             case 'toFCLink':
                 emits('fc');
+                break;
+            case 'calendar':
+                //https://wannianrili.bmcx.com/
+                visible.value = true;
                 break;
         }
     };
