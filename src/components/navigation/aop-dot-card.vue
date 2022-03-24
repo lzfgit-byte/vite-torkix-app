@@ -1,7 +1,7 @@
 <template>
-    <div class="contain">
+    <div class="contain" @click="openHref">
         <div class="imgContain">
-            <img width="53.3" :src="img" />
+            <img width="40" :src="img" />
         </div>
         <div class="title">{{ title }}</div>
     </div>
@@ -16,12 +16,17 @@
             img?: strOrReStr;
             title?: strOrReStr;
             icon?: string;
+            href: string;
         }>(),
         {
             img: '/public/icons/ytb.png',
             title: 'YouTube',
+            href: 'https://www.youtube.com/',
         }
     );
+    const openHref = () => {
+        window.open(props.href, '_blank');
+    };
 </script>
 
 <style scoped lang="less">
