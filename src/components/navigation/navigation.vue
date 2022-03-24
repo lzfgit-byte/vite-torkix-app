@@ -80,7 +80,7 @@
     import aopDotCard from './aop-dot-card.vue';
     import NavCard from './nav-card.vue';
     import _ from 'lodash';
-    import AopDotCard from "./aop-dot-card.vue";
+    import AopDotCard from './aop-dot-card.vue';
     const { webInfos } = getWebData();
     const props = withDefaults(
         defineProps<{

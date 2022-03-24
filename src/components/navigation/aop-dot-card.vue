@@ -17,15 +17,22 @@
             title?: strOrReStr;
             icon?: string;
             href: string;
+            type?: string;
         }>(),
         {
             img: '/public/icons/ytb.png',
             title: 'YouTube',
             href: 'https://www.youtube.com/',
+            type: 'link',
         }
     );
+    const emits = defineEmits(['click']);
     const openHref = () => {
-        window.open(props.href, '_blank');
+        if (props.type === 'link') {
+            window.open(props.href, '_blank');
+        } else {
+            emits('click');
+        }
     };
 </script>
 
