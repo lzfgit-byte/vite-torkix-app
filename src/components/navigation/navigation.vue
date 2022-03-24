@@ -1,5 +1,5 @@
 <template>
-    <div class="topLeft">
+    <div class="topLeft animate__animated animate__backInRight">
         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl" target="_self">Gmail</a>
         <a href="https://www.google.com.hk/imghp?hl=zh-CN&tab=ri&ogbl" target="_self">图片</a>
         <div class="appDot" @click="showSeting(true)">
@@ -24,7 +24,7 @@
             <img width="45" src="public/imgs/tx.png" />
         </div>
     </div>
-    <div class="grid-contain" @click="showSeting(false)">
+    <div class="grid-contain animate__animated animate__zoomInDown" @click="showSeting(false)">
         <div class="iconNav">
             <div class="logoContain">
                 <div class="logo">
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
-    <div v-show="visible" class="containFrame">
+    <div v-show="visible" class="containFrame animate__animated animate__backInDown">
         <div class="closeBtn" @click="handleOk">X</div>
         <iframe src="https://wannianrili.bmcx.com/" width="98%" height="90%"> </iframe>
     </div>
