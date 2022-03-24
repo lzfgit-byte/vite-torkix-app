@@ -38,5 +38,7 @@ npm uninstall -g <package-name>
 
 ## git 从github克隆失败解决
 git config --global http.sslVerify "false"
+git config --global http.proxy 127.0.0.1:10808
+git config --global https.proxy 127.0.0.1:10808
 
 	
