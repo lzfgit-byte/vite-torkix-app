@@ -45,12 +45,15 @@
   top: 50px;
   right: 4px;
   overflow-x: hidden;
-  padding-top: 0;
   position: absolute;
   width: 316px;
   height: 436px;
   animation: 1s linear smallToLarge;
   transition: all 0.1s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  padding: 10px;
 }
 @keyframes smallToLarge {
   0% {

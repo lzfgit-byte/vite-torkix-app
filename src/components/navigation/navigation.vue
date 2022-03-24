@@ -10,7 +10,14 @@
             </svg>
         </div>
         <div class="modalSet" :style="inlineStyle">
-            <aop-dot-card></aop-dot-card>
+            <aop-dot-card
+                v-for="item in aopDotData"
+                :img="item.img"
+                :title="item.title"
+                :type="item.type"
+                :href="item.href"
+                @click="handlerClick(item.type)"
+            ></aop-dot-card>
         </div>
         <div class="photoContain displayInline">
             <img width="45" src="public/imgs/tx.png" />
@@ -77,15 +84,14 @@
     import { webInfoType } from '../../data/webs';
     // import getWebData from '@data/webs';
     import getWebData from '../../data/webs';
-    import aopDotCard from './aop-dot-card.vue';
     import NavCard from './nav-card.vue';
     import _ from 'lodash';
     import AopDotCard from './aop-dot-card.vue';
-    const { webInfos } = getWebData();
+    const { webInfos, aopDotData } = getWebData();
     const props = withDefaults(
         defineProps<{
-            website?: webSiteProp[];
-            searchUrl?: searchWebSit[];
+            website?: any;
+            searchUrl?: any;
             rowNumber?: number;
         }>(),
         {
@@ -112,6 +118,12 @@
     let inlineStyle = ref('');
     const showSeting = () => {
         inlineStyle.value = inlineStyle.value === '' ? 'opacity: 1;' : '';
+    };
+    const handlerClick = (type) => {
+        switch (type) {
+            case 'toggleMovie':
+                break;
+        }
     };
 </script>
 

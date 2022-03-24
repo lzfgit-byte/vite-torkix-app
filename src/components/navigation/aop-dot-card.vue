@@ -15,12 +15,14 @@
         defineProps<{
             img?: strOrReStr;
             title?: strOrReStr;
-            icon?: string;
             href: string;
             type?: string;
         }>(),
         {
-            img: '/public/icons/ytb.png',
+            img: () => {
+                const ranNum = parseInt((Math.random() * 10).toString());
+                return `public/default/default${ranNum}.png`;
+            },
             title: 'YouTube',
             href: 'https://www.youtube.com/',
             type: 'link',
