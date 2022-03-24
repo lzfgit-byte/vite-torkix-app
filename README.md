@@ -6,6 +6,7 @@ vite+ts+vue3
 npm install --save-dev <PACKAGENAME>
 npm install --save <PACKAGENAME>
 npm install --production
+pnpm install @vuedx/typescript-plugin-vue@latest --save-dev
 
 npm install <package>@<version>
 npm install -g webpack@4.16.4

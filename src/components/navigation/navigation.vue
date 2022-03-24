@@ -2,7 +2,7 @@
     <div class="topLeft">
         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl" target="_self">Gmail</a>
         <a href="https://www.google.com.hk/imghp?hl=zh-CN&tab=ri&ogbl" target="_self">图片</a>
-        <div class="appDot" @click="showSeting">
+        <div class="appDot" @click="showSeting(true)">
             <svg width="24" height="24" viewBox="0 0 24 24">
                 <path
                     d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
@@ -12,6 +12,7 @@
         <div class="modalSet" :style="inlineStyle">
             <aop-dot-card
                 v-for="item in aopDotData"
+                :key="item"
                 :img="item.img"
                 :title="item.title"
                 :type="item.type"
@@ -23,7 +24,7 @@
             <img width="45" src="public/imgs/tx.png" />
         </div>
     </div>
-    <div class="grid-contain">
+    <div class="grid-contain" @click="showSeting(false)">
         <div class="iconNav">
             <div class="logoContain">
                 <div class="logo">
@@ -79,15 +80,15 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, reactive, PropType, withDefaults, onMounted } from 'vue';
-    import { webSiteProp, searchWebSit } from './type/navigation-types';
+    import { ref, reactive, withDefaults } from 'vue';
     import { webInfoType } from '../../data/webs';
     // import getWebData from '@data/webs';
     import getWebData from '../../data/webs';
     import NavCard from './nav-card.vue';
     import _ from 'lodash';
     import AopDotCard from './aop-dot-card.vue';
-    const { webInfos, aopDotData } = getWebData();
+    import Http from '../../utils/Http';
+    const { webInfos, aopDotData, movieAggre } = getWebData();
     const props = withDefaults(
         defineProps<{
             website?: any;
@@ -105,23 +106,40 @@
             _.shuffle();
         },
     });
-    let wrapperWebInfos: any[] = reactive([[], []]);
-    webInfos
-        .filter((item) => typeof item.show === 'undefined' && !item.show)
-        .forEach((item, index) => {
-            if (index < props.rowNumber) {
-                wrapperWebInfos[0].push(item as webInfoType);
-            } else if (index < props.rowNumber * 2) {
-                wrapperWebInfos[1].push(item as webInfoType);
+    const emits = defineEmits(['fc']);
+
+    const wrapperWebInfos: any[] = reactive([[], []]);
+    const loadNavData = (data: any) => {
+        wrapperWebInfos[0].length = 0;
+        wrapperWebInfos[1].length = 0;
+        data.filter((item: any) => typeof item.show === 'undefined' && !item.show).forEach(
+            (item: any, index: any) => {
+                if (index < props.rowNumber) {
+                    wrapperWebInfos[0].push(item as webInfoType);
+                } else if (index < props.rowNumber * 2) {
+                    wrapperWebInfos[1].push(item as webInfoType);
+                }
             }
-        });
-    let inlineStyle = ref('');
-    const showSeting = () => {
-        inlineStyle.value = inlineStyle.value === '' ? 'opacity: 1;' : '';
+        );
     };
-    const handlerClick = (type) => {
+    loadNavData(webInfos);
+    const inlineStyle = ref('');
+    const showSeting = (flag?: boolean) => {
+        if (flag) {
+            inlineStyle.value = inlineStyle.value === '' ? 'opacity: 1;' : '';
+        } else {
+            if (inlineStyle.value === 'opacity: 1;') {
+                inlineStyle.value = '';
+            }
+        }
+    };
+    const handlerClick = (type: string) => {
         switch (type) {
             case 'toggleMovie':
+                loadNavData(movieAggre);
+                break;
+            case 'toFCLink':
+                emits('fc');
                 break;
         }
     };
