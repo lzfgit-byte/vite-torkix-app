@@ -10,15 +10,17 @@
             </svg>
         </div>
         <div class="modalSet" :style="inlineStyle">
-            <aop-dot-card
-                v-for="item in aopDotData"
-                :key="item"
-                :img="item.img"
-                :title="item.title"
-                :type="item.type"
-                :href="item.href"
-                @click="handlerClick(item.type)"
-            ></aop-dot-card>
+            <div class="modalContain">
+                <aop-dot-card
+                    v-for="item in aopDotData"
+                    :key="item"
+                    :img="item.img"
+                    :title="item.title"
+                    :type="item.type"
+                    :href="item.href"
+                    @click="handlerClick(item.type)"
+                ></aop-dot-card>
+            </div>
         </div>
         <div class="photoContain displayInline">
             <img width="45" src="public/imgs/tx.png" />
@@ -45,12 +47,14 @@
                     </div>
                     <input
                         id="input"
+                        v-model="searchValue"
                         type="search"
                         autocomplete="off"
                         spellcheck="false"
                         role="combobox"
                         aria-live="polite"
                         placeholder="在 Google 上搜索，或者输入一个网址"
+                        @keyup.enter="doSearch"
                     />
                 </div>
             </div>
@@ -79,7 +83,7 @@
     </div>
     <div v-show="visible" class="containFrame animate__animated animate__backInDown">
         <div class="closeBtn" @click="handleOk">X</div>
-        <iframe src="https://wannianrili.bmcx.com/" width="98%" height="90%"> </iframe>
+        <iframe :src="frameSrc" width="98%" height="90%"> </iframe>
     </div>
 </template>
 
@@ -111,7 +115,10 @@
         },
     });
     const emits = defineEmits(['fc']);
-
+    const searchValue = ref();
+    const doSearch = () => {
+        window.open('https://www.google.com/search?q=' + searchValue.value, '_blank');
+    };
     const wrapperWebInfos: any[] = reactive([[], []]);
     const loadNavData = (data: any) => {
         wrapperWebInfos[0].length = 0;
@@ -141,6 +148,10 @@
     const handleOk = () => {
         visible.value = false;
     };
+    const toggleRecommend = () => {
+        loadNavData(webInfos);
+    };
+    const frameSrc = ref('https://wannianrili.bmcx.com/');
     const handlerClick = (type: string) => {
         switch (type) {
             case 'toggleMovie':
@@ -151,6 +162,14 @@
                 break;
             case 'calendar':
                 //https://wannianrili.bmcx.com/
+                frameSrc.value = 'https://wannianrili.bmcx.com/';
+                visible.value = true;
+                break;
+            case 'toggleRecommend':
+                toggleRecommend();
+                break;
+            case 'showOutbreakMap':
+                frameSrc.value = 'https://news.sina.cn/zt_d/yiqing0121';
                 visible.value = true;
                 break;
         }

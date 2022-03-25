@@ -45,8 +45,10 @@ export default function getWebData() {
     ];
     const aopDotData = [
         { img: '/public/icons/ytb.png', title: '影视聚合', href: '', type: 'toggleMovie' },
+        { img: '/public/icons/tj.png', title: '推荐', href: '', type: 'toggleRecommend' },
         { img: '/public/icons/fc.png', title: 'FC在线', href: '', type: 'toFCLink' },
         { img: '/public/icons/calder.png', title: '日历', href: '', type: 'calendar' },
+        { img: '/public/icons/yi.png', title: '疫情地图', href: '', type: 'showOutbreakMap' },
     ];
     const movieAggre = [
         { href: 'https://www.dandanzan10.top/', name: '蛋蛋赞', icon: 'public/icons/ddz.png' },
