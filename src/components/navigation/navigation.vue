@@ -23,14 +23,14 @@
             </div>
         </div>
         <div class="photoContain displayInline">
-            <img width="45" src="public/imgs/tx.png" />
+            <img width="45" src="/imgs/tx.png" />
         </div>
     </div>
     <div class="grid-contain animate__animated animate__zoomInDown" @click="showSeting(false)">
         <div class="iconNav">
             <div class="logoContain">
                 <div class="logo">
-                    <img width="272" height="92" src="public/imgs/google_logo.svg" />
+                    <img width="272" height="92" src="/imgs/google_logo.svg" />
                 </div>
             </div>
         </div>
@@ -38,12 +38,7 @@
             <div class="searchInputContain">
                 <div class="search">
                     <div class="searchIconContain">
-                        <img
-                            width="20"
-                            height="20"
-                            class="searchIcon"
-                            src="public/imgs/search.svg"
-                        />
+                        <img width="20" height="20" class="searchIcon" src="/imgs/search.svg" />
                     </div>
                     <input
                         id="input"

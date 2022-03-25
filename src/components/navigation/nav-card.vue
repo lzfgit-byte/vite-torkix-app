@@ -1,7 +1,7 @@
 <template>
     <div class="contain" :href="href" target="_blank" @click="target">
         <div class="dotContain">
-            <img width="24" height="24" src="public/imgs/icon_more_vert.svg" />
+            <img width="24" height="24" src="/imgs/icon_more_vert.svg" />
         </div>
         <div class="imgContain">
             <div class="img">
@@ -27,7 +27,7 @@
             name: 'YouTube',
             icon: () => {
                 const ranNum = parseInt((Math.random() * 10).toString());
-                return `public/default/default${ranNum}.png`;
+                return `/default/default${ranNum}.png`;
             },
             href: 'https://www.youtube.com/',
         }

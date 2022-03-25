@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite --host",
-    "build": "vuedx-typecheck . && vite build"
+    "build": "vuedx-typecheck . && vite build",
+    "buildDO": "vite build"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
