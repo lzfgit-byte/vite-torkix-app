@@ -14,16 +14,8 @@ export interface webInfoType {
 export default function getWebData() {
     const webInfos: webInfoType[] = [
         { href: 'https://axutongxue.com/', name: '储物间', icon: '/icons/cwj.ico' },
-        {
-            href: 'https://tool.chinaz.com/tools/imgtobase',
-            icon: '/icons/zzgj.png',
-            name: '站长工具',
-        },
-        {
-            href: 'https://www.123pan.com/',
-            icon: '/icons/123.png',
-            name: '123网盘',
-        },
+        { href: 'https://meta.appinn.net/', icon: '/icons/xzrj.png', name: '小众软件' },
+        { href: 'https://www.123pan.com/', icon: '/icons/123.png', name: '123网盘' },
         {
             href: 'https://mega.nz/folder/6wxFGQ6B#KkTVZbNNJDLyDesnBtE4Bw',
             icon: '/icons/mega.png',
@@ -49,6 +41,7 @@ export default function getWebData() {
         { img: '/icons/fc.png', title: 'FC在线', href: '', type: 'toFCLink' },
         { img: '/icons/calder.png', title: '日历', href: '', type: 'calendar' },
         { img: '/icons/yi.png', title: '疫情地图', href: '', type: 'showOutbreakMap' },
+        { img: '/icons/ks.png', title: '看书', href: '', type: 'readSomething' },
     ];
     const movieAggre = [
         { href: 'https://www.dandanzan10.top/', name: '蛋蛋赞', icon: '/icons/ddz.png' },
@@ -58,5 +51,21 @@ export default function getWebData() {
         { href: 'https://www.dm233.cc/', name: '233动漫' },
         { href: 'https://www.agemys.com/', name: 'age动漫' },
     ];
-    return { webInfos, aopDotData, movieAggre };
+    const readingWebs = [
+        { href: 'http://www.zoudupai.com/', name: '走读派' },
+        { href: 'https://www.99csw.com/', name: '99藏书' },
+    ];
+    return { webInfos, aopDotData, movieAggre, readingWebs };
 }
+
+export const webH = [
+    { href: 'https://thehentaiworld.com/', name: 'hword' },
+    { href: 'https://rule34video.com/', name: 'rule34' },
+    { href: 'https://18comic.vip/', name: '禁漫天堂' },
+    { href: 'https://pornhub.com/', name: 'pornhub' },
+    { href: 'https://www.xvideos.com/', name: 'xvideos' },
+    {
+        href: 'https://www.whichav.video/zh-hans/1209.html',
+        name: '导航',
+    },
+];

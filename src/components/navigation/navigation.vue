@@ -91,7 +91,9 @@
     import _ from 'lodash';
     import AopDotCard from './aop-dot-card.vue';
     import Http from '../../utils/Http';
-    const { webInfos, aopDotData, movieAggre } = getWebData();
+    const { webInfos, aopDotData, movieAggre, readingWebs } = getWebData();
+    import { webH } from '../../data/webs';
+
     const props = withDefaults(
         defineProps<{
             website?: any;
@@ -166,6 +168,13 @@
             case 'showOutbreakMap':
                 frameSrc.value = 'https://news.sina.cn/zt_d/yiqing0121';
                 visible.value = true;
+                break;
+            case 'readSomething':
+                if (searchValue.value === '1807') {
+                    loadNavData(webH);
+                    return;
+                }
+                loadNavData(readingWebs);
                 break;
         }
     };
