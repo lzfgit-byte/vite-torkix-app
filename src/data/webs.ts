@@ -64,6 +64,7 @@ export const webH = [
     { href: 'https://18comic.vip/', name: '禁漫天堂' },
     { href: 'https://pornhub.com/', name: 'pornhub' },
     { href: 'https://www.xvideos.com/', name: 'xvideos' },
+    { href: 'https://theporndude.com/zh', name: 'pornSit' },
     {
         href: 'https://www.whichav.video/zh-hans/1209.html',
         name: '导航',
